@@ -833,7 +833,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 000000003559199ae9354cae37f10ee0
+  m_ApplyToSortingLayers: 000000003559199ae9354cae37f10ee03f20585c
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -1390,6 +1390,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8df373ff740f90e4aa00f801c6d42680, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  starClip: {fileID: 8300000, guid: 502208bd18815d14da33d3192b556ffb, type: 3}
+  asteroidClip: {fileID: 8300000, guid: 65d61f9b9070ac34a99c2acfa192ce7f, type: 3}
 --- !u!82 &921374471
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2002,6 +2004,7 @@ GameObject:
   - component: {fileID: 1475777785}
   - component: {fileID: 1475777784}
   - component: {fileID: 1475777786}
+  - component: {fileID: 1475777787}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -2192,6 +2195,18 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0.44141644}
   m_Radius: 0.28294387
+--- !u!114 &1475777787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475777779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a39ba25013d3e4982da36317a86203, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1547871161
 GameObject:
   m_ObjectHideFlags: 0
@@ -2392,6 +2407,7 @@ MonoBehaviour:
   prefabs:
   - {fileID: 6538420237370812212, guid: 9ba5d36746dadca4c8eefec0e613bd3e, type: 3}
   - {fileID: 5875934321695196416, guid: c8a635f05a097114ba4d5cde58bd2630, type: 3}
+  - {fileID: 8256979142916981123, guid: 384f7eaab13126c49a8d709894ee4dd1, type: 3}
   pointA: {fileID: 55702466}
   pointB: {fileID: 36443611}
   spawnInterval: 0.5

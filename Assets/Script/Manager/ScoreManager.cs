@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -15,10 +16,15 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        UpdateScore();
+    }
+
     public void AddScore(int amount)
     {
         score += amount;
-        scoreText.text = "Score: " + score.ToString();
+        UpdateScore();
     }
 
     public void DecreaseScore(int amount)
@@ -27,12 +33,17 @@ public class ScoreManager : MonoBehaviour
         {
             score -= amount;
         }
-        scoreText.text = "Score: " + score.ToString();
+        UpdateScore();
     }
 
     public void ResetScore()
     {
         score = 0;
+        UpdateScore();
+    }
+
+    private void UpdateScore()
+    {
         scoreText.text = "Score: " + score.ToString();
     }
 }

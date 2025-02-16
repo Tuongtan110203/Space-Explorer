@@ -4,6 +4,9 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance { get; private set; }
     private AudioSource source;
+    [SerializeField] private AudioClip starClip;
+    [SerializeField] private AudioClip asteroidClip;
+
 
     private void Awake()
     {
@@ -26,4 +29,15 @@ public class SoundManager : MonoBehaviour
     {
         source.PlayOneShot(_sound);
     }
+
+    public void PlayStarSound()
+    {
+        source.PlayOneShot(starClip);
+    }
+
+    public void PlayHitAsteroidSound()
+    {
+        source.PlayOneShot(asteroidClip);
+    }
+
 }

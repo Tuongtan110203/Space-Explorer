@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
     public HealthBar healthBar;
     public RandomEnemy randomEnemy;
     public ScoreManager scoreManager;
+    
 
     #region Map(Min Max)
     private float minX, maxX, minY, maxY;

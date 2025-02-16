@@ -2,7 +2,12 @@
 
 public class Bullet : MonoBehaviour
 {
-    public GameObject explosionPrefab; 
+    public GameObject explosionPrefab;
+    private SoundManager soundManager;
+    private void Awake()
+    {
+        soundManager = FindAnyObjectByType<SoundManager>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -22,6 +27,7 @@ public class Bullet : MonoBehaviour
                 GameObject explosion = Instantiate(explosionPrefab, collision.transform.position, Quaternion.identity);
                 Destroy(explosion, 0.5f); 
             }
+            soundManager.PlayHitAsteroidSound();
             Destroy(collision.gameObject); 
             Destroy(gameObject); 
         }

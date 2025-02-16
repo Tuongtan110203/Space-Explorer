@@ -25,6 +25,8 @@ public class RandomEnemy : MonoBehaviour
 
         // Spawn enemy
         int randomIndex = Random.Range(0, prefabs.Length);
+        GameObject selectedPrefab = prefabs[randomIndex];
+        Debug.Log("Prefab được chọn: " + selectedPrefab.name);
         GameObject spawnedObject = Instantiate(prefabs[randomIndex], spawnPosition, Quaternion.identity);
        
         Destroy(spawnedObject, 2f);
