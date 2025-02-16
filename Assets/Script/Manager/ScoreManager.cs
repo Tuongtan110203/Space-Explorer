@@ -20,4 +20,19 @@ public class ScoreManager : MonoBehaviour
         score += amount;
         scoreText.text = "Score: " + score.ToString();
     }
+
+    public void DecreaseScore(int amount)
+    {
+        if (score > 0)
+        {
+            score -= amount;
+        }
+        scoreText.text = "Score: " + score.ToString();
+    }
+
+    public void ResetScore()
+    {
+        score = 0;
+        scoreText.text = "Score: " + score.ToString();
+    }
 }
