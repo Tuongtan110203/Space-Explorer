@@ -24,14 +24,14 @@ public class PlayerShootingState : PlayerState
     {
         base.Update();
 
-        if (Input.GetKey(KeyCode.Space) && Time.time >= nextFireTime)
+        if ((Input.GetKey(KeyCode.Space) || Input.GetMouseButton(0)) && Time.time >= nextFireTime)
         {
             Shoot();
             nextFireTime = Time.time + player.fireRate; 
             
         }
 
-        if (!Input.GetKey(KeyCode.Space))
+        if (!Input.GetKey(KeyCode.Space) && !Input.GetMouseButton(0))
         {
             stateMachine.ChangeState(player.idleState);
         }

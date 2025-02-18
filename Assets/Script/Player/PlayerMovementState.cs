@@ -24,7 +24,7 @@ public class PlayerMovementState : PlayerState
         if (xInput != 0 || yInput != 0)
         {
             Vector2 inputDirection = new Vector2(xInput, yInput).normalized;
-            player.SetVelocity(inputDirection.x * (player.moveSpeed / 2), inputDirection.y * player.moveSpeed * 2);
+            player.SetVelocity(inputDirection.x * (player.moveSpeed / 2), inputDirection.y * player.moveSpeed);
         }
         else
         {

@@ -37,14 +37,14 @@ public class Player : MonoBehaviour
 
     #region DIE HURT
     public float currentHealth { get; private set; }
-    private bool invulnerable;
+    public bool invulnerable;
     #endregion
 
     #region component
     public Rigidbody2D rb;
     public Animator animator { get; private set; }
 
-    private SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer;
 
     #endregion
 
@@ -67,12 +67,13 @@ public class Player : MonoBehaviour
         movementState = new PlayerMovementState(this, stateMachine, "Move");
         idleState = new PlayerIdleState(this, stateMachine, "Idle");
         shootingState = new PlayerShootingState(this, stateMachine, "Shoot");
+
     }
 
     private void Start()
     {
         stateMachine.Initialize(idleState);
-
+ 
     }
 
     private void Update()
@@ -86,7 +87,7 @@ public class Player : MonoBehaviour
 
         stateMachine.currentState.Update();
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
             stateMachine.ChangeState(shootingState);
         }
@@ -192,8 +193,9 @@ public class Player : MonoBehaviour
             enemy.SetActive(false);
         }
 
-        randomEnemy.CancelInvoke("SpawnEnemies");
-        randomEnemy.InvokeRepeating("SpawnEnemies", 1f, randomEnemy.spawnInterval);
+        randomEnemy.CancelInvoke("SpawnMeteorite");
+        randomEnemy.InvokeRepeating("SpawnMeteorite", 1f, randomEnemy.spawnInterval);
+
         #endregion
 
         #region Score

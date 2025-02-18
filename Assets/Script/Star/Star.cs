@@ -15,7 +15,7 @@ public class Star : MonoBehaviour
         {
             Destroy(collision.gameObject);
             soundManager.PlayStarSound();
-            scoreManager.AddScore(1);
+            scoreManager.AddScore(10);
         }
     }
 }
